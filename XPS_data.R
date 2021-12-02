@@ -16,3 +16,21 @@ C_KLL_Auger <- 247.2
 
 # calculate using Koopman's Theorem aka deltaSCF method
 # @NOTE: electron binding energy is higher in gas phase than solid phase
+
+#step 1 optimize co2 geometry
+#step 2 identify the orbitals (NBO method)
+
+#BE = -OrbitalEngergy + RelaxationEnergy + DeltaC
+# RelaxationEnergy = 
+# 
+# Koopmans theorem: BE = -E 
+# ie. BE equals the negative of the orbital energy
+# DeltaSCF = -E + R
+#          = TotEnergyIonWithCoreHole - TotEnergyNeutral
+# For DeltaSCF both calcs are done at neutral species' optimized geometery
+# To calculate DeltaSCF, must form core hole at specific place
+#
+# Calcualtion #1 Optimize CO2 Geometry @ 6‐311G(d,p)
+# gives TotalEnergy, OptimizedGeometry, OrbitalsOfInterest
+
+# Calculation #2 swap HOMO and orbital of interest, calculate energy with a charge state of +1
