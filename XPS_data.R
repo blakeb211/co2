@@ -34,3 +34,40 @@ C_KLL_Auger <- 247.2
 # gives TotalEnergy, OptimizedGeometry, OrbitalsOfInterest
 
 # Calculation #2 swap HOMO and orbital of interest, calculate energy with a charge state of +1
+
+tot_electrons <- 8*2+6
+# OPTIMIZED RESULTS 6311++(d,p) 
+OC_bond_length <- 1.1358
+calculated_dipole <- 0.0
+
+# From the population analysis,
+# MO #1 appears to be the O1s orbital
+# MO #3 appears to be the C1s
+
+# FIRST APPROXIMATION TO THE BINDING ENERGY IS
+# KOOPMANS THEOREM 
+mol <- 6.02214076 * 10^23
+eV_per_kcal <- 2.612569782383e+22
+# O1s
+print("O1S Calculated vs Experiment")
+calculated_O1s_be_kcal <- 20.6482 * 627.51 / mol
+calculated_O1s_be_eV <- calculated_O1s_be_kcal * eV_per_kcal
+print(calculated_O1s_be_eV)
+calculated_minus_expt <- calculated_O1s_be_eV - O_1s
+print(calculated_minus_expt / O_1s * 100) 
+# Result: calculated is 4.6% higher than experiment
+
+# C1s
+print("O1S Calculated vs Experiment")
+calculated_C1s_be_kcal <- 11.4532 * 627.51 / mol
+calculated_C1s_be_eV <- calculated_C1s_be_kcal * eV_per_kcal
+print(calculated_C1s_be_eV)
+calculated_minus_expt <- calculated_C1s_be_eV - C_1s
+print(calculated_minus_expt / C_1s * 100) 
+# Result: calculated is 6.1% higher than experiment
+
+# KOOPMANS THEOREM APPEARS TO HOLD PRETTY WELL.
+# I THINK THAT THE FIRST ORDER CORRECTION TO IT, 
+# THE RELAXATION ENERGY, WOULD BE NEGATIVE AND COULD
+# POSSIBLY BRING THE RESULT EVEN CLOSER TO THE EXPERIMENT.
+
